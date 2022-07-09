@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(
+    60deg,
+    rgba(106, 216, 218, 0.683),
+    rgba(40, 114, 198, 0.735)
+  );
+}
+.card {
+  width: 270px;
+  height: 370px;
+  margin: 2rem;
+  text-align: center;
+  background-color: white;
+  padding: 4rem 0.7rem;
+  box-shadow: 5px 5px 12px rgba(75, 75, 75, 0.763);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: 0.6s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card::before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.card::after {
+  width: 100%;
+  height: 100%;
+  background-color: #fbda61;
+  background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  clip-path: circle(20% at 92% 8%);
+  transition: 0.6s;
+}
+.card:hover::after {
+  clip-path: circle(100%);
+}
+.card:hover span {
+  color: #fff;
+}
+.card:hover p {
+  color: #fff;
+}
+.card:hover h1 {
+  color: #fff;
+}
+.card:hover button {
+  background-color: #fff;
+  color: black;
+}
+/* .card:hover::after button {
+  background-color: #fff;
+  color: black;
+} */
+.card h1 {
+  margin: 1rem 0rem;
+  transition: 0.5s;
+}
+.card p {
+  margin-top: 1.6rem;
+  letter-spacing: 1px;
+  transition: 0.5s;
+}
+button {
+  margin-top: 3rem;
+  background-color: rgb(45, 45, 45);
+  color: white;
+  width: 140px;
+  height: 34px;
+  font-size: 0.8rem;
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border: none;
+  transition: 0.5s;
+}
+.card span {
+  font-weight: bolder;
+  font-size: 1.7rem;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+}
